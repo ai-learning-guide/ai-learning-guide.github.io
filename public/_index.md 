@@ -1,0 +1,33 @@
++++
+title: "AI Learning Guide, Learn AI step by step from Machine Learning, Deep Learning, and LLM tutorials."
+draft: false
+type: "home"
+description: "Step-by-step tutorials on Machine Learning, Deep Learning, and LLMs. Partial chapters are free, full content via subscription."
++++
+
+# Welcome to AI Learning Guide
+
+Learn AI step by step from Machine Learning, Deep Learning, and LLM tutorials.
+
+---
+
+## Featured Books
+
+### Machine Learning
+- [Chapter 1: Linear Regression](/machine-learning/ch01/linear-regression/) – Intro teaser
+- [Chapter 2: Gradient Descent](/machine-learning/ch01/gradient-descent/)
+
+### Deep Learning
+- [Chapter 1: Neural Network](/deep-learning/ch01/neural-network/)
+
+### LLM & RAG
+- [Prompt Engineering](/llm/prompt-engineering/)
+- [RAG](/llm/rag/)
+
+---
+
+<div class="cta" style="margin-top:20px;">
+  <a class="btn btn-primary" href="https://example.com/subscribe" target="_blank">
+    🔑 Read Full Chapters → Subscribe
+  </a>
+</div>
