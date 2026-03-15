@@ -2,21 +2,132 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>AI Learning Guide</title>
-    <link>https://ai-learning-guide.com/</link>
+    <link>http://localhost:1318/</link>
     <description>Recent content on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2026 16:43:56 +0800</lastBuildDate>
-    <atom:link href="https://ai-learning-guide.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Mar 2026 17:00:22 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1318/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1318/posts/test/</link>
+      <pubDate>Sun, 15 Mar 2026 17:00:22 +0800</pubDate>
+      <guid>http://localhost:1318/posts/test/</guid>
+      <description>&lt;h1 id=&#34;22-multivariable-linear-regression&#34;&gt;2.2 Multivariable linear regression&lt;/h1&gt;
+&lt;h2 id=&#34;221-understanding-multivariable-variables&#34;&gt;2.2.1 Understanding Multivariable Variables&lt;/h2&gt;
+&lt;p&gt;In the content of Section 2.1, we introduced in detail what linear regression is and a typical application scenario, and also introduced how to build a simple linear regression model using the open-source sklearn. We believe that by now, all readers have already gained a certain understanding of the core idea of linear regression. Next, we will continue to learn the subsequent content of linear regression.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About</title>
-      <link>https://ai-learning-guide.com/about/</link>
+      <link>http://localhost:1318/about/</link>
       <pubDate>Sun, 15 Mar 2026 16:43:56 +0800</pubDate>
-      <guid>https://ai-learning-guide.com/about/</guid>
+      <guid>http://localhost:1318/about/</guid>
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
 &lt;p&gt;I am an AI algorithm engineer and have published three books in the field of AI so far. These include the simplified Chinese editions “「跟我一起学机器学习」” and “「跟我一起学深度学习」”, as well as the traditional Chinese edition “「一本書晉升深度學習世界級大師」”.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;asfasf&#34; loading=&#34;lazy&#34; src=&#34;https://ai-learning-guide.com/images/bb5e76af-bdea-495e-96ab-d650f2f9d398.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1318/images/bb5e76af-bdea-495e-96ab-d650f2f9d398.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I have a deep understanding of the difficulties beginners face when entering the AI field, and I focus on helping newcomers quickly step through the door into the world of AI. The initial drafts of these materials originated from my study notes during my master’s program, including courses such as Andrew Ng’s Machine Learning course and Stanford University’s CS224N and CS231N. Since then, I have continuously refined and updated these materials for nearly 10 years.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ch1.1 Environment Installation</title>
+      <link>http://localhost:1318/machinelearning/ch01/ch1.1_installation/</link>
+      <pubDate>Sun, 15 Mar 2026 16:43:56 +0800</pubDate>
+      <guid>http://localhost:1318/machinelearning/ch01/ch1.1_installation/</guid>
+      <description>&lt;p&gt;所谓工欲善其事必先利其器，在本章内容中我们将详细介绍如何从零开始安装配置机器学习算法的运行环境和开发环境。总体来讲本章内容可以分为两大部分： 一是不同操作系统平台下Python环境的安装和管理，另一个则是集成开发环境的安装和配置。下面我们分别开始进行介绍。&lt;/p&gt;
+&lt;h1 id=&#34;11-安装使用conda&#34;&gt;1.1 安装使用Conda&lt;/h1&gt;
+&lt;p&gt;作为在Python开发中一款优秀的包管理工具，Conda一直以来有着其独特的优势，尤其是在机器学习和深度学习的开发中。当我们需要区分和隔离不同版本或依赖的Python环境时，Conda工具便体现出了优势。&lt;/p&gt;
+&lt;h2 id=&#34;111-conda介绍&#34;&gt;1.1.1 Conda介绍&lt;/h2&gt;
+&lt;p&gt;Conda是一个开源的包管理系统和环境管理系统，它主要用于安装和管理Python及其包和依赖项。它是构建机器学习和数据科学环境的利器，具有以下几个关键优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;跨平台：Conda可在Windows、macOS和Linux等多种操作系统上运行，提供了良好的跨平台兼容性。&lt;/li&gt;
+&lt;li&gt;环境管理：Conda允许方便地创建独立的Python环境，并且每个环境拥有自己的包和依赖项，从而避免不同项目之间的包冲突。&lt;/li&gt;
+&lt;li&gt;易于使用: Conda提供了命令行界面，使得Python环境的管理变得直观和简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在Python环境中我们可以通过两种方式来安装Conda工具。第1种是下载Anaconda [1] 进行安装，第2种则是下载Miniconda [2] 进行安装。Anaconda 和 Miniconda本质上都是基于Conda的软件包，Anaconda拓展自Miniconda，区别在于前者包含了更多的Python科学计算包，是一款商业软件，因此安装文件通常也比较大；而Miniconda则是一款开源且小巧的Conda软件包，我们可以根据实际需要来安装相应的Python软件。由于后续需要创建自己的虚拟环境，所以可以下载更加小巧的Miniconda（安装过程完全一样）。&lt;/p&gt;
+&lt;p&gt;下面是一些常用的Conda使用命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;创建名为py38且Python版本为3.8的Python环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda create -n py38 python&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;3.8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除名为py38的虚拟环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda env remove -n py38 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;激活环境py38环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda activate py38
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;退出当前Python环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda deactivate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;列出当前所有的Python虚拟环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda env list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;克隆当前环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda create -n newpy38 --clone py38 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对某个虚拟环境中的Python版本继续升级&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda activate py38 &lt;span style=&#34;color:#75715e&#34;&gt;# 先激活进入到虚拟环境py38&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; conda install python&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;3.9 &lt;span style=&#34;color:#75715e&#34;&gt;# 将Python版本从3.8升级到3.9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;112-windows环境&#34;&gt;1.1.2 Windows环境&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. Conda安装&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ch1.1 Environment Installation</title>
+      <link>http://localhost:1318/machinelearning/ch02/ch2.1_installation/</link>
+      <pubDate>Sun, 15 Mar 2026 16:43:56 +0800</pubDate>
+      <guid>http://localhost:1318/machinelearning/ch02/ch2.1_installation/</guid>
+      <description>&lt;p&gt;所谓工欲善其事必先利其器，在本章内容中我们将详细介绍如何从零开始安装配置机器学习算法的运行环境和开发环境。总体来讲本章内容可以分为两大部分： 一是不同操作系统平台下Python环境的安装和管理，另一个则是集成开发环境的安装和配置。下面我们分别开始进行介绍。&lt;/p&gt;
+&lt;h1 id=&#34;11-安装使用conda&#34;&gt;1.1 安装使用Conda&lt;/h1&gt;
+&lt;p&gt;作为在Python开发中一款优秀的包管理工具，Conda一直以来有着其独特的优势，尤其是在机器学习和深度学习的开发中。当我们需要区分和隔离不同版本或依赖的Python环境时，Conda工具便体现出了优势。&lt;/p&gt;
+&lt;h2 id=&#34;111-conda介绍&#34;&gt;1.1.1 Conda介绍&lt;/h2&gt;
+&lt;p&gt;Conda是一个开源的包管理系统和环境管理系统，它主要用于安装和管理Python及其包和依赖项。它是构建机器学习和数据科学环境的利器，具有以下几个关键优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;跨平台：Conda可在Windows、macOS和Linux等多种操作系统上运行，提供了良好的跨平台兼容性。&lt;/li&gt;
+&lt;li&gt;环境管理：Conda允许方便地创建独立的Python环境，并且每个环境拥有自己的包和依赖项，从而避免不同项目之间的包冲突。&lt;/li&gt;
+&lt;li&gt;易于使用: Conda提供了命令行界面，使得Python环境的管理变得直观和简单。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在Python环境中我们可以通过两种方式来安装Conda工具。第1种是下载Anaconda [1] 进行安装，第2种则是下载Miniconda [2] 进行安装。Anaconda 和 Miniconda本质上都是基于Conda的软件包，Anaconda拓展自Miniconda，区别在于前者包含了更多的Python科学计算包，是一款商业软件，因此安装文件通常也比较大；而Miniconda则是一款开源且小巧的Conda软件包，我们可以根据实际需要来安装相应的Python软件。由于后续需要创建自己的虚拟环境，所以可以下载更加小巧的Miniconda（安装过程完全一样）。&lt;/p&gt;
+&lt;p&gt;下面是一些常用的Conda使用命令：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;创建名为py38且Python版本为3.8的Python环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda create -n py38 python&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;3.8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;删除名为py38的虚拟环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda env remove -n py38 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;激活环境py38环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda activate py38
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;退出当前Python环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda deactivate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;列出当前所有的Python虚拟环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda env list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;克隆当前环境&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda create -n newpy38 --clone py38 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对某个虚拟环境中的Python版本继续升级&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; conda activate py38 &lt;span style=&#34;color:#75715e&#34;&gt;# 先激活进入到虚拟环境py38&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; conda install python&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;3.9 &lt;span style=&#34;color:#75715e&#34;&gt;# 将Python版本从3.8升级到3.9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;112-windows环境&#34;&gt;1.1.2 Windows环境&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. Conda安装&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

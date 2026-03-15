@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Categories | AI Learning Guide</title>
+<title>ML | AI Learning Guide</title>
 <meta name="keywords" content="">
 <meta name="description" content="Comprehensive AI Learning Guide for Machine Learning, Deep Learning, and LLMs">
 <meta name="author" content="WangCheng">
-<link rel="canonical" href="http://localhost:1318/categories/">
+<link rel="canonical" href="http://localhost:1318/tags/ml/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cf582825ed545a21f9732852f61d7ebd069786e2b2a08dcdf0d3c70cd07722f9.css" integrity="sha256-z1goJe1UWiH5cyhS9h1&#43;vQaXhuKyoI3N8NPHDNB3Ivk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1318/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1318/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1318/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1318/categories/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1318/categories/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1318/tags/ml/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1318/tags/ml/">
 <noscript>
     <style>
         #theme-toggle,
@@ -110,13 +110,43 @@
         </ul>
     </nav>
 </header>
-<main class="main">
-<header class="page-header">
-    <h1>Categories</h1>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1318/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1318/tags/">Tags</a></div>
+  <h1>
+    ML
+  </h1>
 </header>
 
-<ul class="terms-tags">
-</ul>
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Ch1.1 Environment Installation
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>所谓工欲善其事必先利其器，在本章内容中我们将详细介绍如何从零开始安装配置机器学习算法的运行环境和开发环境。总体来讲本章内容可以分为两大部分： 一是不同操作系统平台下Python环境的安装和管理，另一个则是集成开发环境的安装和配置。下面我们分别开始进行介绍。
+1.1 安装使用Conda 作为在Python开发中一款优秀的包管理工具，Conda一直以来有着其独特的优势，尤其是在机器学习和深度学习的开发中。当我们需要区分和隔离不同版本或依赖的Python环境时，Conda工具便体现出了优势。
+1.1.1 Conda介绍 Conda是一个开源的包管理系统和环境管理系统，它主要用于安装和管理Python及其包和依赖项。它是构建机器学习和数据科学环境的利器，具有以下几个关键优势：
+跨平台：Conda可在Windows、macOS和Linux等多种操作系统上运行，提供了良好的跨平台兼容性。 环境管理：Conda允许方便地创建独立的Python环境，并且每个环境拥有自己的包和依赖项，从而避免不同项目之间的包冲突。 易于使用: Conda提供了命令行界面，使得Python环境的管理变得直观和简单。 在Python环境中我们可以通过两种方式来安装Conda工具。第1种是下载Anaconda [1] 进行安装，第2种则是下载Miniconda [2] 进行安装。Anaconda 和 Miniconda本质上都是基于Conda的软件包，Anaconda拓展自Miniconda，区别在于前者包含了更多的Python科学计算包，是一款商业软件，因此安装文件通常也比较大；而Miniconda则是一款开源且小巧的Conda软件包，我们可以根据实际需要来安装相应的Python软件。由于后续需要创建自己的虚拟环境，所以可以下载更加小巧的Miniconda（安装过程完全一样）。
+下面是一些常用的Conda使用命令：
+创建名为py38且Python版本为3.8的Python环境
+1 conda create -n py38 python=3.8 删除名为py38的虚拟环境
+1 conda env remove -n py38 激活环境py38环境
+1 conda activate py38 退出当前Python环境
+1 conda deactivate 列出当前所有的Python虚拟环境
+1 conda env list 克隆当前环境
+1 conda create -n newpy38 --clone py38 对某个虚拟环境中的Python版本继续升级
+1 conda activate py38 # 先激活进入到虚拟环境py38 2 conda install python==3.9 # 将Python版本从3.8升级到3.9 1.1.2 Windows环境 1. Conda安装
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-15 16:43:56 +0800 CST'>March 15, 2026</span>&nbsp;·&nbsp;<span>WangCheng</span></footer>
+  <a class="entry-link" aria-label="post link to Ch1.1 Environment Installation" href="http://localhost:1318/machinelearning/ch01/ch1.1_installation/"></a>
+</article>
     </main>
     
 <footer class="footer">
