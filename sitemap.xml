@@ -2,42 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1318/</loc>
-    <lastmod>2026-03-15T17:00:22+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/posts/</loc>
-    <lastmod>2026-03-15T17:00:22+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/posts/test/</loc>
-    <lastmod>2026-03-15T17:00:22+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/about/</loc>
+    <loc>https://ai-learning-guide.github.io/about/</loc>
     <lastmod>2026-03-15T16:43:56+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1318/machinelearning/ch01/ch1.1_installation/</loc>
+    <loc>https://ai-learning-guide.github.io/</loc>
     <lastmod>2026-03-15T16:43:56+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1318/machinelearning/ch02/ch2.1_installation/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
+    <loc>https://ai-learning-guide.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1318/machinelearning/ch01/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
+    <loc>https://ai-learning-guide.github.io/posts/</loc>
   </url><url>
-    <loc>http://localhost:1318/machinelearning/ch02/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/machinelearning/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/tags/ml/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/tags/regression/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/tags/</loc>
-    <lastmod>2026-03-15T16:43:56+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1318/categories/</loc>
+    <loc>https://ai-learning-guide.github.io/tags/</loc>
   </url>
 </urlset>
