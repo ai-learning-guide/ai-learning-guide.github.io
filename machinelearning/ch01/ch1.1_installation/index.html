@@ -490,7 +490,7 @@ Generally speaking, the content of this chapter can be divided into two main par
     position: fixed;
      
     right: calc(50% - 460px);
-    top: 50%;  
+    top: 70%;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -538,7 +538,48 @@ Generally speaking, the content of this chapter can be divided into two main par
       display: none;
     }
   }
+   
+#top-link {
+    position: fixed !important;
+     
+    right: calc(50% - 460px) !important;
+     
+    top: calc(75% + 100px) !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 
+     
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+ 
+#top-link:hover {
+    background: #000 !important;
+    color: #fff !important;
+    transform: translateY(-5px) !important;
+}
+
+ 
+@media screen and (max-width: 1150px) {
+    #top-link {
+        right: 30px !important;  
+        top: auto !important;
+        bottom: 30px !important;
+    }
+}
 </style>
     </main>
     
