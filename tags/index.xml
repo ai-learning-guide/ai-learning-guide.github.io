@@ -6,8 +6,22 @@
     <description>Recent content in Tags on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Mar 2026 22:11:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 21:19:16 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jupyter</title>
+      <link>https://ai-learning-guide.github.io/tags/jupyter/</link>
+      <pubDate>Fri, 20 Mar 2026 21:19:16 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PyCharm</title>
+      <link>https://ai-learning-guide.github.io/tags/pycharm/</link>
+      <pubDate>Fri, 20 Mar 2026 21:19:16 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/tags/pycharm/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Conda</title>
       <link>https://ai-learning-guide.github.io/tags/conda/</link>

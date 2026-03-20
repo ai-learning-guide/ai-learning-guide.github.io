@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Chapter01 | Environment Setting on AI Learning Guide</title>
-    <link>https://ai-learning-guide.github.io/machinelearning/ch01/</link>
-    <description>Recent content in Chapter01 | Environment Setting on AI Learning Guide</description>
+    <title>Jupyter on AI Learning Guide</title>
+    <link>https://ai-learning-guide.github.io/tags/jupyter/</link>
+    <description>Recent content in Jupyter on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Mar 2026 21:19:16 +0800</lastBuildDate>
-    <atom:link href="https://ai-learning-guide.github.io/machinelearning/ch01/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ai-learning-guide.github.io/tags/jupyter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ch1.2 IDE  Configuration </title>
       <link>https://ai-learning-guide.github.io/machinelearning/ch01/ch01.2_ide/</link>
@@ -17,14 +17,6 @@
 &lt;p&gt;In Python development, there are two most commonly used Integrated Development Environments (IDEs): one is Jupyter Notebook, and the other is the well-known PyCharm. In this section, we will briefly introduce the usage methods of these two common development tools respectively.&lt;/p&gt;
 &lt;h2 id=&#34;121-installation-and-usage-of-jupyter-notebook&#34;&gt;1.2.1 Installation and Usage of Jupyter Notebook&lt;/h2&gt;
 &lt;p&gt;Jupyter Notebook is a very powerful tool, especially in areas such as data science, scientific research, and presenting complex data analysis projects. Jupyter provides an interactive programming environment that allows us to write and run code, view results, modify code, and then run it again, making experimental analysis and data exploration very simple.Meanwhile, the Jupyter development page also has excellent support for data visualization tools (such as Matplotlib, Seaborn, Plotly, etc.), making it easy to create interactive charts and visualizations. Additionally, Jupyter also supports writing relevant documentation in Markdown format on the development page.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Ch1.1 Environment Installation</title>
-      <link>https://ai-learning-guide.github.io/machinelearning/ch01/ch01.1_installation/</link>
-      <pubDate>Thu, 19 Mar 2026 22:11:56 +0800</pubDate>
-      <guid>https://ai-learning-guide.github.io/machinelearning/ch01/ch01.1_installation/</guid>
-      <description>&lt;p&gt;As the saying goes, &amp;ldquo;A craftsman must first sharpen his tools if he is to do his work well.&amp;rdquo; In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.&lt;/p&gt;
-&lt;p&gt;Generally speaking, the content of this chapter can be divided into two main parts: one is the installation and management of the Python environment under different operating system platforms, and the other is the installation and configuration of the integrated development environment. Below, we will start introducing them separately.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
