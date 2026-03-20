@@ -14,14 +14,7 @@ Learn AI step by step from Machine Learning, Deep Learning, and LLM tutorials.
 ## Featured Books
 
 ### Machine Learning
-- [Chapter 1: Linear Regression](/machine-learning/ch01/linear-regression/) – Intro teaser
-- [Chapter 2: Gradient Descent](/machine-learning/ch01/gradient-descent/)
-
-### Deep Learning
-- [Chapter 1: Neural Network](/deep-learning/ch01/neural-network/)
-
-### LLM & RAG
-- [Prompt Engineering](/llm/prompt-engineering/)
-- [RAG](/llm/rag/)
+- [Chapter 1: Linear Regression](/machinelearning/ch01/linear-regression/) – Intro teaser
+- [Chapter 2: Gradient Descent](/machinelearning/ch01/gradient-descent/)
 
 ---

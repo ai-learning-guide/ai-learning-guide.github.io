@@ -71,24 +71,19 @@ Generally speaking, the content of this chapter can be divided into two main par
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://ai-learning-guide.github.io/machinelearning/ch01/ch1.1_installation/">
-  <meta property="og:site_name" content="AI Learning Guide">
-  <meta property="og:title" content="Ch1.1 Environment Installation">
-  <meta property="og:description" content="As the saying goes, “A craftsman must first sharpen his tools if he is to do his work well.” In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.
+</script><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ch1.1 Environment Installation">
+<meta name="twitter:description" content="As the saying goes, &ldquo;A craftsman must first sharpen his tools if he is to do his work well.&rdquo; In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.
 Generally speaking, the content of this chapter can be divided into two main parts: one is the installation and management of the Python environment under different operating system platforms, and the other is the installation and configuration of the integrated development environment. Below, we will start introducing them separately.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="machinelearning">
-    <meta property="article:published_time" content="2026-03-19T22:11:56+08:00">
-    <meta property="article:modified_time" content="2026-03-19T22:11:56+08:00">
-    <meta property="article:tag" content="Conda">
-    <meta property="article:tag" content="Python">
+<meta name="twitter:image" content="https://ai-learning-guide.github.io/images/matthew.jpg">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Ch1.1 Environment Installation">
-  <meta name="twitter:description" content="As the saying goes, “A craftsman must first sharpen his tools if he is to do his work well.” In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ch1.1 Environment Installation">
+<meta property="og:description" content="As the saying goes, &ldquo;A craftsman must first sharpen his tools if he is to do his work well.&rdquo; In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.
 Generally speaking, the content of this chapter can be divided into two main parts: one is the installation and management of the Python environment under different operating system platforms, and the other is the installation and configuration of the integrated development environment. Below, we will start introducing them separately.">
-
+<meta property="og:url" content="https://ai-learning-guide.github.io/machinelearning/ch01/ch1.1_installation/">
+<meta property="og:image" content="https://ai-learning-guide.github.io/images/matthew.jpg">
+<meta property="og:site_name" content="AI Learning Guide">
 
 <script type="application/ld+json">
 {
@@ -129,7 +124,7 @@ Generally speaking, the content of this chapter can be divided into two main par
   "articleBody": "As the saying goes, “A craftsman must first sharpen his tools if he is to do his work well.” In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.\nGenerally speaking, the content of this chapter can be divided into two main parts: one is the installation and management of the Python environment under different operating system platforms, and the other is the installation and configuration of the integrated development environment. Below, we will start introducing them separately.\n1.1 Install and Use Conda As an excellent package management tool in Python development, Conda has always had its unique advantages, especially in Machine Learning and Deep Learning development. When we need to distinguish and isolate Python environments with different versions or dependencies, the Conda tool demonstrates its advantages.\n1.1.1 Introduction to Conda Conda is an open-source package management system and environment management system, mainly used for installing and managing Python, its packages, and dependencies. It is a powerful tool for building Machine Learning and data science environments, with the following key advantages:\nCross-platform: Conda can run on multiple operating systems such as Windows, macOS, and Linux, providing good cross-platform compatibility. Environment Management: Conda allows for the convenient creation of independent Python environments, with each environment having its own packages and dependencies, thereby avoiding package conflicts between different projects. Easy to Use: Conda provides a command-line interface, making the management of Python environments intuitive and simple. In a Python environment, we can install the Conda tool in two ways. The first is to download Anaconda [1] for installation, and the second is to download Miniconda [2] for installation. Anaconda and Miniconda are essentially both Conda-based packages, with Anaconda being an extension of Miniconda. The difference is that the former includes more Python scientific computing packages and is a commercial software, so the installation file is usually larger; Miniconda, on the other hand, is an open-source and lightweight Conda package, and we can install the corresponding Python software according to our actual needs. Since we will need to create our own virtual environment later, we can download the more lightweight Miniconda (the installation process is exactly the same).\nBelow are some commonly used Conda commands:\nCreate a Python environment named py38 with Python version 3.8\nconda create -n py38 python=3.8 Delete the virtual environment named py38\nconda env remove -n py38 Activate the py38 environment\nconda activate py38 Exit the current Python environment\nconda deactivate List all current Python virtual environments\nconda env list Clone the current environment\nconda create -n newpy38 --clone py38 Continue to upgrade the Python version in a virtual environment\n1 conda activate py38 # First, activate and enter the virtual environment py38 2 conda install python==3.9 # Upgrade Python version from 3.8 to 3.9 1.1.2 Windows Environment 1. Conda Installation\nFirst, download the latest Miniconda3 installation package for the Windows platform from the official website [2], and then follow the installation steps below.\n① Install Miniconda\nDouble-click the installation package with the.exe extension to start the installation. If there are no special instructions later, simply keep the default installation items and directly click the Next button, as shown in Figure 1-1.\nFigure 1-1 Miniconda Installation Interface Diagram ② Specify the installation directory\nDuring the installation process, you can also customize the installation path, but in general, keeping the default installation path is sufficient, as shown in Figure 1-2.\nFigure 1-2 Miniconda Installation Path Interface Diagram ③ Advanced Settings\nWhen the installation process reaches this step, simply keep the default settings and click the Install button directly, as shown in Figure 1-3.\nFigure 1-3 Advanced Settings Interface Diagram ④Installation completed\nAfter the installation is complete, click the Finish button, as shown in Figure 1-4. Next, you can test whether the installation was successful by opening the command line and then entering the relevant commands.\nFigure 1-4 Miniconda Installation Completion Interface Diagram ⑤ Verification\nAfter completing the above installation, you can find the Anaconda Prompt (Miniconda) command-line terminal in the “Start” menu. Click on this command-line terminal, and after opening it, enterconda -Vcommand. If the relevant version information appears, it indicates that the installation was successful, as shown in Figure 1-5.\nFigure 1-5 Verification Diagram of Miniconda Installation Meanwhile, as shown in Figure 1-5, after completing the Miniconda installation, there will be a Python environment named base by default.\n2. Python Environment Installation\nAfter completing the installation of the Conda package manager, we create a new Python virtual environment named py38 according to the conda create -n py38 python=3.8 command in Section 1.1.1, as shown in Figure 1-6.\nFigure 1-6 Installation Diagram of Python Virtual Environment As can be seen from Figure 1-6, the Conda source used when creating the new py38 virtual environment is the Tsinghua Conda source we added above. Meanwhile, the save path of the py38 virtual environment is C:\\Users\\wangcheng\\miniconda3\\envs\\py38 directory. It is worth mentioning that for each Python virtual environment, the Python packages installed via the pip install command and their installation files are all located in lib\\python3.x\\site-packages within the virtual environment. Knowing this path facilitates finding the source code when needed.For example, for the py38 virtual environment, all installation files are located in C:\\Users\\wangcheng\\miniconda3\\envs\\py38\\lib\\python3.8\\site-packages.\nFurthermore, after the installation is completed, we can activate our newly created Python environment by using the commandconda activate py38, as shown in Figure 1-7.\nFigure 1-7 Python Virtual Environment View Diagram As shown in Figure 1-7, after activating the py38 virtual environment, the (base) at the very front of the command line has changed to (py38), which is also an effective way to distinguish the Python environment currently used in the terminal. Meanwhile, we have also listed all the virtual environments currently existing in Conda through the conda env list command.\nIn this way, the Python environment based on the Windows operating system is installed.\n1.1.3 Linux Environment 1. Conda Installation\nFirst, also go to the official website [2] to find the address of the installation file for the latest version under the Linux environment, and then download it on the Linux host using the following command.\n1 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh After completing the download, we will obtain an installation package namedMiniconda3-latest-Linux-x86_64.sh. Further, we perform the installation via the commandbash Miniconda3-latest-Linux-x86_64.sh, as shown in Figure 1-8.\nFigure 1-8 Miniconda Installation Interface Diagram After entering the interface shown in Figure 1-8, we click the “Enter” key to proceed to the next step, as shown in Figure 1-9.\nFigure 1-9 Miniconda Installation Terms Diagram As shown in Figure 1-9, at this time, press the “q” key on the keyboard to exit the terms, and then enter “yes” and press the “Enter” key to accept the terms and proceed to the next step, as shown in Figure 1-10.\nFigure 1-10 Miniconda Installation Path Selection Diagram As shown in Figure 1-10, we can specify the installation path of Miniconda. Here, we can simply press the “Enter” key to use the default path, and then proceed to the next step as shown in Figure 1-11.\nFigure 1-11 Miniconda Default Settings Diagram Here it prompts us whether to automatically activate the default Python environment, i.e., the base environment, after logging in to the host. We choose “yes” and simply press the “Enter” key to complete the final installation.\nAfter completing the installation, we can start using Conda to manage environments by logging back into the Linux host, as shown in Figure 1-12.\nFigure 1-12 Verification Diagram of Miniconda As shown in Figure 1-12, we have successfully completed the installation of the Conda tool, and the verification results are also consistent with those in Figure 1-5.\nHowever, if theconda: command not foundprompt appears at this time, you can try to execute the commandsource ~/.bashrc, and then execute the test command. After that, if it still prompts that thecondacommand cannot be found, you can try manually adding the environment variables through the following two lines of commands:\n1 echo 'export PATH=\"/root/miniconda3/bin:$PATH\"' \u003e\u003e ~/.bashrc 2 source ~/.bashrc Then execute the test command in Figure 1-7, and you will see the correct version prompt message. It should be noted that the path after PATH in the above command is the installation path specified in Figure 1-10, which needs to be determined according to your own actual situation.\nFinally, we can also replace the Conda source, create the corresponding Python virtual environment, and replace the corresponding pip source as needed (it is recommended to switch), and the process is the same as that described in Section 1.1.2, so it will not be repeated here.\n2. Python Installation\nAfter completing the installation of Conda, we can start creating a new Python virtual environment. Here, we take the Python 3.9 version as an example. First, we continue to create a Python environment through the commandconda create -n py39 python=3.9.\nFinally, we can enter the new Python environment using the following command:\n1 conda activate py39 2 python -V # Python 3.9.18 1.1.4 Book Environment For any Python environment, it has corresponding dependent packages and their related version dependencies. In a Python environment, we usually export the names and versions of the packages that a project depends on to a fixed file, so that others can reinstall the corresponding environment based on this file.\n1. Environmental Dependencies\nAfter entering the Python virtual environment to be exported, we can export it using the following command:\n1 pip freeze \u003e requirements.txt After executing the above command, a file named requirements.txt will be generated in the current directory, with contents similar to the following:\nnumpy 1.26.4 packaging 24.0 pandas 2.2.1 pillow 10.2.0 In this file, each line specifies the name of a Python package and its corresponding version number. It should be noted that requirements.txt is just a conventional name and can be any other name.\nFurthermore, we only need to execute the following command to complete the installation process of all Python packages in requirements.txt:\npip install -r requirements.txt 2. Environment Installation\nAll the algorithm content and related illustrations in this book are provided with complete example code. Meanwhile, for the code in the entire project, readers can first create a virtual environment named MLWM with Python version 3.11, then enter this environment via the command conda activate MLWM, and finally complete the installation of the Machine Learning environment according to the requirements.txt file under the AllBookCode directory of the code project.\n(MLWM)[root@moon ~]$ pip install -r requirements.txt Installing collected packages: pytz, jieba, tzdata, threadpoolctl, six, pyparsing, pillow, packaging, numpy, kiwisolver, joblib, graphviz, fonttools, cycler, scipy, python-dateutil, contourpy, scikit-learn, pandas, matplotlib, wordcloud Successfully installed contourpy-1.2.0 cycler-0.12.1 fonttools-4.50.0 graphviz-0.20.3 jieba-0.42.1 joblib-1.3.2 kiwisolver-1.4.5 matplotlib-3.8.3 numpy-1.26.4 packaging-24.0 pandas-2.2.1 pillow-10.2.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 pytz-2024.1 scikit-learn-1.4.1.post1 scipy-1.12.0 six-1.16.0 threadpoolctl-3.4.0 tzdata-2024.1 wordcloud-1.9.3 From the above output results, it can be seen that we have completed the installation of a total of 24 Python packages here. After the installation is completed, we can also list the installed Python packages in the current Python environment using the pip list command:\n(MLWM)[root@moon ~]$ pip list Package Version --------------- ----------- contourpy 1.2.0 cycler 0.12.1 fonttools 4.50.0 graphviz 0.20.3 jieba 0.42.1 joblib 1.3.2 kiwisolver 1.4.5 matplotlib 3.8.3 numpy 1.26.4 packaging 24.0 pandas 2.2.1 pillow 10.2.0 pip 23.3.1 pyparsing 3.1.2 python-dateutil 2.9.0.post0 pytz 2024.1 scikit-learn 1.4.1.post1 scipy 1.12.0 setuptools 68.2.2 six 1.16.0 threadpoolctl 3.4.0 tzdata 2024.1 wheel 0.41.2 wordcloud 1.9.3 1.1.5 Summary In this section, we first introduced Conda, a Python package management tool, and several common usage commands; then we separately introduced the installation process of the Conda tool and the installation and management of Python virtual environments in Windows and Linux environments; finally, we took the Python runtime environment in this book as an example to introduce the entire installation process in detail again. In the next section, we will start to introduce how to install an efficient Python Integrated Development Environment.\n",
   "wordCount" : "1969",
   "inLanguage": "en",
-  "datePublished": "2026-03-19T22:11:56+08:00",
+  "image": "https://ai-learning-guide.github.io/images/matthew.jpg","datePublished": "2026-03-19T22:11:56+08:00",
   "dateModified": "2026-03-19T22:11:56+08:00",
   "author":{
     "@type": "Person",
@@ -200,6 +195,16 @@ Generally speaking, the content of this chapter can be divided into two main par
 <main class="main">
 
 <article class="post-single">
+  <aside class="side-share-bar">
+    <div class="share-label">SHARE</div>
+    <a href="https://twitter.com/intent/tweet?text=Ch1.1%20Environment%20Installation&url=https%3a%2f%2fai-learning-guide.github.io%2fmachinelearning%2fch01%2fch1.1_installation%2f"
+       target="_blank" rel="noopener" class="side-share-item" title="Share to X">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+      </svg>
+    </a>
+  </aside>
+
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ai-learning-guide.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://ai-learning-guide.github.io/machinelearning/">Learn Machine Learning With Me</a>&nbsp;»&nbsp;<a href="https://ai-learning-guide.github.io/machinelearning/ch01/">Chapter01 | Environment Setting</a></div>
     <h1 class="post-title entry-hint-parent">
@@ -478,6 +483,63 @@ Generally speaking, the content of this chapter can be divided into two main par
     </ul>
   </footer>
 </article>
+
+<style>
+   
+  .side-share-bar {
+    position: fixed;
+     
+    right: calc(50% - 460px);
+    top: 50%;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 999;
+  }
+
+  .share-label {
+    font-size: 10px;
+    color: #bbb;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .side-share-item {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .side-share-item:hover {
+    background: #000;  
+    color: #fff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-color: #000;
+  }
+
+   
+  @media screen and (max-width: 1150px) {
+    .side-share-bar {
+      display: none;
+    }
+  }
+
+</style>
     </main>
     
 <footer class="footer">

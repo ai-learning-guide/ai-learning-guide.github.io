@@ -73,21 +73,23 @@ I have a deep understanding of the difficulties beginners face when entering the
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script><meta property="og:url" content="https://ai-learning-guide.github.io/about/">
-  <meta property="og:site_name" content="AI Learning Guide">
-  <meta property="og:title" content="About">
-  <meta property="og:description" content="About Me I am an AI algorithm engineer and have published three books in the field of AI so far. These include the simplified Chinese editions “「跟我一起学机器学习」” and “「跟我一起学深度学习」”, as well as the traditional Chinese edition “「一本書晉升深度學習世界級大師」”.
-I have a deep understanding of the difficulties beginners face when entering the AI field, and I focus on helping newcomers quickly step through the door into the world of AI. The initial drafts of these materials originated from my study notes during my master’s program, including courses such as Andrew Ng’s Machine Learning course and Stanford University’s CS224N and CS231N. Since then, I have continuously refined and updated these materials for nearly 10 years.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2026-03-15T16:43:56+08:00">
-    <meta property="article:modified_time" content="2026-03-15T16:43:56+08:00">
+</script><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About">
+<meta name="twitter:description" content="About Me
+I am an AI algorithm engineer and have published three books in the field of AI so far. These include the simplified Chinese editions “「跟我一起学机器学习」” and “「跟我一起学深度学习」”, as well as the traditional Chinese edition “「一本書晉升深度學習世界級大師」”.
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About">
-  <meta name="twitter:description" content="About Me I am an AI algorithm engineer and have published three books in the field of AI so far. These include the simplified Chinese editions “「跟我一起学机器学习」” and “「跟我一起学深度学习」”, as well as the traditional Chinese edition “「一本書晉升深度學習世界級大師」”.
 I have a deep understanding of the difficulties beginners face when entering the AI field, and I focus on helping newcomers quickly step through the door into the world of AI. The initial drafts of these materials originated from my study notes during my master’s program, including courses such as Andrew Ng’s Machine Learning course and Stanford University’s CS224N and CS231N. Since then, I have continuously refined and updated these materials for nearly 10 years.">
+<meta name="twitter:image" content="https://ai-learning-guide.github.io/images/matthew.jpg">
 
+<meta property="og:type" content="article">
+<meta property="og:title" content="About">
+<meta property="og:description" content="About Me
+I am an AI algorithm engineer and have published three books in the field of AI so far. These include the simplified Chinese editions “「跟我一起学机器学习」” and “「跟我一起学深度学习」”, as well as the traditional Chinese edition “「一本書晉升深度學習世界級大師」”.
+
+I have a deep understanding of the difficulties beginners face when entering the AI field, and I focus on helping newcomers quickly step through the door into the world of AI. The initial drafts of these materials originated from my study notes during my master’s program, including courses such as Andrew Ng’s Machine Learning course and Stanford University’s CS224N and CS231N. Since then, I have continuously refined and updated these materials for nearly 10 years.">
+<meta property="og:url" content="https://ai-learning-guide.github.io/about/">
+<meta property="og:image" content="https://ai-learning-guide.github.io/images/matthew.jpg">
+<meta property="og:site_name" content="AI Learning Guide">
 
 <script type="application/ld+json">
 {
@@ -187,6 +189,16 @@ I have a deep understanding of the difficulties beginners face when entering the
 <main class="main">
 
 <article class="post-single">
+  <aside class="side-share-bar">
+    <div class="share-label">SHARE</div>
+    <a href="https://twitter.com/intent/tweet?text=About&url=https%3a%2f%2fai-learning-guide.github.io%2fabout%2f"
+       target="_blank" rel="noopener" class="side-share-item" title="Share to X">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+      </svg>
+    </a>
+  </aside>
+
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ai-learning-guide.github.io/">Home</a></div>
     <h1 class="post-title entry-hint-parent">
@@ -233,6 +245,63 @@ I have a deep understanding of the difficulties beginners face when entering the
     </ul>
   </footer>
 </article>
+
+<style>
+   
+  .side-share-bar {
+    position: fixed;
+     
+    right: calc(50% - 460px);
+    top: 50%;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 999;
+  }
+
+  .share-label {
+    font-size: 10px;
+    color: #bbb;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .side-share-item {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .side-share-item:hover {
+    background: #000;  
+    color: #fff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-color: #000;
+  }
+
+   
+  @media screen and (max-width: 1150px) {
+    .side-share-bar {
+      display: none;
+    }
+  }
+
+</style>
     </main>
     
 <footer class="footer">
