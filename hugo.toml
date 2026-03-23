@@ -1,0 +1,55 @@
+baseURL = "https://ai-learning-guide.github.io/"
+languageCode = "en-us"
+title = "AI Learning Guide"
+theme = "PaperMod"
+
+
+# 开启SEO优化
+[params]
+  description = "Comprehensive AI Learning Guide for Machine Learning, Deep Learning, and LLMs"
+  author = "WangCheng"
+  HomeContent = true    # PaperMod 兼容旧版本，可保留
+  ShowToc = true        # 展示文章上面的 目录
+  LeftToc = true
+  ShowBreadCrumbs = true #  文章标题上面的路径，如  Home » Machine Learning Introduction » Chapter02 | Linear Regression
+
+[params.assets]
+    favicon = "/images/favicon.png"
+
+# 导航菜单（书籍目录）
+[menu]
+
+[[menu.main]]
+name = "Machine Learning"
+url = "/machinelearning/"
+weight = 2
+
+#[[menu.main]]
+#name = "Deep Learning"
+#url = "/deep-learning/"
+#weight = 3
+
+[[menu.main]]
+name = "RAG"
+url = "/rag/"
+weight = 4
+
+[[menu.main]]
+name = "Blogs"
+url = "/posts/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 6
+
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 5
+
+
+
+
+

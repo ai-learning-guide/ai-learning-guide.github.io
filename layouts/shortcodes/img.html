@@ -1,0 +1,8 @@
+<div style="margin: 20px 0;">
+  <img src="{{ .Get "src" }}" width="{{ .Get "width" }}" style="display: block; margin: 0 auto;">
+  {{ if .Get "caption" }}
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      {{ .Get "caption" }}
+    </div>
+  {{ end }}
+</div>

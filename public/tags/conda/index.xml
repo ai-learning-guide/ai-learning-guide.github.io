@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Conda on AI Learning Guide</title>
+    <link>http://localhost:1313/tags/conda/</link>
+    <description>Recent content in Conda on AI Learning Guide</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Mar 2026 22:11:56 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/conda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ch1.1 Environment Installation</title>
+      <link>http://localhost:1313/machinelearning/ch01/ch01.1_installation/</link>
+      <pubDate>Thu, 19 Mar 2026 22:11:56 +0800</pubDate>
+      <guid>http://localhost:1313/machinelearning/ch01/ch01.1_installation/</guid>
+      <description>&lt;p&gt;As the saying goes, &amp;ldquo;A craftsman must first sharpen his tools if he is to do his work well.&amp;rdquo; In this chapter, we will introduce in detail how to install and configure the operating environment and development environment for machine learning algorithms from scratch.&lt;/p&gt;
+&lt;p&gt;Generally speaking, the content of this chapter can be divided into two main parts: one is the installation and management of the Python environment under different operating system platforms, and the other is the installation and configuration of the integrated development environment. Below, we will start introducing them separately.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
