@@ -6,8 +6,15 @@
     <description>Recent content in Tags on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2026 22:43:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 20:20:03 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Methodology</title>
+      <link>https://ai-learning-guide.github.io/tags/methodology/</link>
+      <pubDate>Mon, 23 Mar 2026 20:20:03 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/tags/methodology/</guid>
+      <description></description>
+    </item>
     <item>
       <title>LLM</title>
       <link>https://ai-learning-guide.github.io/tags/llm/</link>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on AI Learning Guide</title>
-    <link>https://ai-learning-guide.github.io/posts/</link>
-    <description>Recent content in Posts on AI Learning Guide</description>
+    <title>Methodology on AI Learning Guide</title>
+    <link>https://ai-learning-guide.github.io/tags/methodology/</link>
+    <description>Recent content in Methodology on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Mar 2026 20:20:03 +0800</lastBuildDate>
-    <atom:link href="https://ai-learning-guide.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ai-learning-guide.github.io/tags/methodology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Master Machine Learning Efficiently — Explained Thoroughly</title>
       <link>https://ai-learning-guide.github.io/posts/how-to-master-machine-learning-efficiently--explained-thoroughly/</link>

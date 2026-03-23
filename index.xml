@@ -6,8 +6,16 @@
     <description>Recent content on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2026 22:43:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 20:20:03 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Master Machine Learning Efficiently — Explained Thoroughly</title>
+      <link>https://ai-learning-guide.github.io/posts/how-to-master-machine-learning-efficiently--explained-thoroughly/</link>
+      <pubDate>Mon, 23 Mar 2026 20:20:03 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/posts/how-to-master-machine-learning-efficiently--explained-thoroughly/</guid>
+      <description>&lt;p&gt;For beginners, &amp;ldquo;How can I get started with Machine Learning?&amp;rdquo; and &amp;ldquo;Should I start with theory or practice when getting started with Machine Learning?&amp;rdquo; are all well-worn topics.&lt;/p&gt;
+&lt;p&gt;Thinking back to when I first started learning Machine Learning, wasn&amp;rsquo;t it the same? I always felt like I was just lingering outside, unable to find the right way in. Fortunately, after a long period of exploration, I&amp;rsquo;ve also summarized a learning path that suits me, and I&amp;rsquo;ll share it with you all next.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Ch1.1 What&#39;s RAG?</title>
       <link>https://ai-learning-guide.github.io/rag/ch01/ch01.1_whats-rag/</link>
