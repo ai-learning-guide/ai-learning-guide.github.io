@@ -6,8 +6,18 @@
     <description>Recent content on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 20:20:03 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 21:15:04 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ch1.2 RAG Overview</title>
+      <link>https://ai-learning-guide.github.io/rag/ch01/ch01.2-rag-overview/</link>
+      <pubDate>Mon, 23 Mar 2026 21:15:04 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/rag/ch01/ch01.2-rag-overview/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://ai-learning-guide.github.io/rag/ch01/ch01.1_whats-rag/&#34;&gt;In the previous section&lt;/a&gt;, we introduced in detail the background and motivation for the emergence of RAG, understood why RAG is needed, and what RAG can ultimately help us achieve. In this section, we will introduce the basic process of RAG development.&lt;/p&gt;
+&lt;h2 id=&#34;1-core-motivation-why-is-rag-needed&#34;&gt;1. Core Motivation: Why is RAG needed?&lt;/h2&gt;
+&lt;p&gt;First, let&amp;rsquo;s do a simple review.&lt;/p&gt;
+&lt;p&gt;The primary driving force behind RAG (Retrieval Augmented Generation) lies in the limitations of LLM pre-trained data. Despite the large scale of LLM pre-training, they cannot incorporate users&amp;rsquo;private dataorthe latest dataafter pre-training.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to Master Machine Learning Efficiently — Explained Thoroughly</title>
       <link>https://ai-learning-guide.github.io/posts/how-to-master-machine-learning-efficiently--explained-thoroughly/</link>

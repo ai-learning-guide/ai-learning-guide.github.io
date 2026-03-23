@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ai-learning-guide.github.io/</loc>
-    <lastmod>2026-03-23T20:20:03+08:00</lastmod>
+    <lastmod>2026-03-23T21:15:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/rag/ch01/ch01.2-rag-overview/</loc>
+    <lastmod>2026-03-23T21:15:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/tags/rag/</loc>
+    <lastmod>2026-03-23T21:15:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/tags/</loc>
+    <lastmod>2026-03-23T21:15:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/rag/ch01/</loc>
+    <lastmod>2026-03-23T20:59:51+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/posts/how-to-master-machine-learning-efficiently--explained-thoroughly/</loc>
     <lastmod>2026-03-23T20:20:03+08:00</lastmod>
@@ -12,9 +24,6 @@
     <lastmod>2026-03-23T20:20:03+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/posts/</loc>
-    <lastmod>2026-03-23T20:20:03+08:00</lastmod>
-  </url><url>
-    <loc>https://ai-learning-guide.github.io/tags/</loc>
     <lastmod>2026-03-23T20:20:03+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/rag/ch01/ch01.1_whats-rag/</loc>
@@ -27,9 +36,6 @@
     <lastmod>2026-03-21T22:43:04+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/tags/pretrain/</loc>
-    <lastmod>2026-03-21T22:43:04+08:00</lastmod>
-  </url><url>
-    <loc>https://ai-learning-guide.github.io/tags/rag/</loc>
     <lastmod>2026-03-21T22:43:04+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/machinelearning/ch01/ch01.2_ide/</loc>

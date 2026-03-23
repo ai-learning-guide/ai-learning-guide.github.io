@@ -6,14 +6,7 @@
     <description>Recent content in Learn RAG With Me on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Mar 2026 22:43:04 +0800</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/rag/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Ch1.1 What&#39;s RAG?</title>
-      <link>https://ai-learning-guide.github.io/rag/ch01/ch01.1_whats-rag/</link>
-      <pubDate>Sat, 21 Mar 2026 22:43:04 +0800</pubDate>
-      <guid>https://ai-learning-guide.github.io/rag/ch01/ch01.1_whats-rag/</guid>
-      <description>&lt;p&gt;Large Language Models (LLMs) are trained on large but fixed corpora, which limits their ability to reason about private or up-to-date information. Fine-tuning is a way to mitigate this issue, but it is generally not suitable for recalling factual information and is relatively costly. Against this backdrop, Retrieval-Augmented Generation (RAG) has gradually emerged as a mainstream and powerful mechanism. RAG uses documents retrieved from external data sources as a Knowledge Base to enhance the generation capabilities of LLMs through in-context learning.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
