@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Ch2.1 Establishment and Solution | AI Learning Guide</title>
+<meta name="keywords" content="Linear Regression, scikit-learn">
+<meta name="description" content="After the introduction in Chapter 1, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.
+Following the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let&rsquo;s officially start introducing linear regression.">
+<meta name="author" content="WangCheng">
+<link rel="canonical" href="https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cf582825ed545a21f9732852f61d7ebd069786e2b2a08dcdf0d3c70cd07722f9.css" integrity="sha256-z1goJe1UWiH5cyhS9h1&#43;vQaXhuKyoI3N8NPHDNB3Ivk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ai-learning-guide.github.io/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ai-learning-guide.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ai-learning-guide.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ai-learning-guide.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ai-learning-guide.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ch2.1 Establishment and Solution">
+<meta name="twitter:description" content="After the introduction in Chapter 1, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.
+Following the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let&rsquo;s officially start introducing linear regression.">
+<meta name="twitter:image" content="https://ai-learning-guide.github.io/images/ml/202603232147.jpg"><meta property="og:type" content="article">
+<meta property="og:title" content="Ch2.1 Establishment and Solution">
+<meta property="og:description" content="After the introduction in Chapter 1, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.
+Following the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let&rsquo;s officially start introducing linear regression.">
+<meta property="og:url" content="https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/">
+<meta property="og:image" content="https://ai-learning-guide.github.io/images/ml/202603232147.jpg">
+<meta property="og:site_name" content="AI Learning Guide">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3HY8943TH3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3HY8943TH3');
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Learn Machine Learning With Me",
+      "item": "https://ai-learning-guide.github.io/machinelearning/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Chapter02 | Linear Regression",
+      "item": "https://ai-learning-guide.github.io/machinelearning/ch02/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Ch2.1 Establishment and Solution",
+      "item": "https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Ch2.1 Establishment and Solution",
+  "name": "Ch2.1 Establishment and Solution",
+  "description": "After the introduction in Chapter 1, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.\nFollowing the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let\u0026rsquo;s officially start introducing linear regression.\n",
+  "keywords": [
+    "Linear Regression", "scikit-learn"
+  ],
+  "articleBody": "After the introduction in Chapter 1, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.\nFollowing the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let’s officially start introducing linear regression.\nFigure 2-1 Learning roadmap for linear regression 2.1 Model Establishment and Solution 2.1.1 Understanding Linear Regression Models Generally speaking, each algorithm in Machine Learning is born to solve a certain type of problem. In other words, there are indeed some problems in real situations that can be solved by linear regression, such as predicting housing prices. But some may ask, why should linear regression be used for predicting housing prices instead of other algorithmic models? The reason lies in the fact that common sense tells us that housing prices increase with the growth of area and generally show a linear growth trend. So, is there a situation where the price decreases after the area reaches a certain level, thus not conforming to linear growth?This may certainly exist, but in actual processing, we will definitely prioritize the linear regression model. When the results are not satisfactory, we will try other algorithms. Therefore, after learning multiple algorithms, when faced with a specific problem, we need to consider which model is more suitable for solving the current problem.\nFor example, the housing price trend in a certain city is shown in Figure 2-2, where the horizontal axis represents area and the vertical axis represents price, and the housing price generally shows a linear growth trend. If you are now randomly told the area of a house, how can you predict (or calculate) its corresponding price?\nFigure 2-2 shows the trend of housing prices in a certain city 2.1.2 Build a linear regression model Generally speaking, when we encounter a practical problem, we first select an appropriate model based on the background of the problem and common sense. Meanwhile, common sense now tells us that the growth of housing prices is more likely to follow models such as linear regression. Therefore, we can consider building a linear regression model as shown below.\n$$ \\hat{y}=h(x)=wx+b\\tag{2-1} $$\nAmong them, $w$ is called the weight parameter (Weight), and $b$ is called the bias (Bias) or intercept (Intercept). After the unknown parameters $w$ and $b$ are solved by a certain method, it means that we have obtained this prediction model, that is, given a house area $x$, we can predict its corresponding house price $\\hat{y}$.\nNote: In Machine Learning, the so-called model can be simply understood as a function.\n2.1.3 Solving the Linear Regression Model Once a model is established, the natural question that comes to mind is how to solve the model $h(x)$ using the given data, also known as the training set (Training Data). In middle school, we learned how to find the equation of a line passing through two coordinate points, but in the above scenario, this approach clearly won’t work (since not all points lie on a single line). So, is there a good solution?\nAt this point, we need to shift our thinking. Since we cannot directly solve for it, let’s try an indirect approach. Now, imagine what condition $h(x)$ must satisfy to be considered a good $h(x)$? Recall the purpose of solving for $h(x)$. Isn’t it to output an “accurate” housing price $\\hat{y}$ after inputting the area $x$? Since directly solving for $h(x)$ is difficult, let’s start from “accuracy”.\nBut how do we define accuracy? Here, we can characterize “accuracy” by calculating the mean squared error between the true housing price and the predicted housing price for each sample, that is\n$$ \\begin{aligned} J(w,b)\u0026=\\frac{1}{2m}\\sum\\limits_{i=1}^{m}{{{({{y}^{(i)}}-{{{\\hat{y}}}^{(i)}})}^{2}}}\\\\[2ex] {{{\\hat{y}}}^{(i)}}\u0026=h({{x}^{(i)}})=w{{x}^{(i)}}+b \\end{aligned} \\tag{2-2} $$\nHere, $m$ represents the number of samples; $x^{(i)}$ represents the value of the $i$-th sample, which is the area of the $i$-th house; $y^{(i)}$ represents the true price of the $i$-th house; $\\hat{y}^{(i)}$ represents the predicted price of the $i$-th house.\nFrom Equation (2-2), we know that the parameters $\\hat{w}$ and $\\hat{b}$ when the function $J(w,b)$ takes its minimum value are the target parameters we are looking for. Why? Because when $J(w,b)$ takes its minimum value, it means that the error between the predicted values and the true values of all samples is minimized at this time. If we take it to the extreme, when all predicted values are equal to the true values, then $J(w,b)$ at this time is 0.Therefore, the problem of how to solve the model $h(x)$ is transformed into the problem of how to minimize the function $J(w,b)$, and $J(w,b)$ also has a specific term called the objective function, cost function, or loss function.\nBy now, we are only one step away from the learning objective of the first stage, which is how to perform modeling, solving, and prediction using open-source frameworks. As for how the solving process is carried out, that is the task of the second stage. Now, let’s start to complete the final step of the first stage.\n2.1.4 Introduction to sklearn As shown in Figure 2-3, scikit-learn, abbreviated as sklearn, is an open-source Machine Learning framework that includes dozens of commonly used Machine Learning algorithms, such as linear regression, Logistic Regression, decision tree, support vector machine, decision tree, and clustering analysis. Meanwhile, its Pythonic design style is very user-friendly and easy to get started for Python users, and each algorithm comes with corresponding examples and API documentation. Therefore, using sklearn for modeling is an excellent choice for beginners in Machine Learning.\nFigure 2-3 sklearn Intrudction 2.1.5 Install sklearn and Other Libraries In Chapter 1, we have already introduced how to configure the Python environment. Now, let’s start installing the required packages (libraries) in the Python virtual environment created in Chapter 1. If you have already completed the installation of all Python packages in this book following the steps in Section 1.1.4, you can skip the content of this subsection.\n1. Open the terminal\nIf it is in a Windows environment, you should first click the “Start” button, then find and open Anaconda Prompt, and finally activate the corresponding Python virtual environment. If it is in a Linux environment, you can directly open the command-line terminal and then activate the corresponding virtual environment.\n2. Install Python packages\nTo complete the entire linear regression modeling task and visualize the results, it is necessary to install the two Python packages, sklearn and matplotlib. If the pip source address has been replaced with the Tsinghua University mirroring during the previous environment configuration, the download speed will be faster, as shown in Figure 2-4.\nFigure 2-4 sklearn installation Since PyCharm will build a new package index after installing the corresponding Python packages, it is necessary to wait a few minutes, as shown in Figure 2-5.\nFigure 2-5 Python Package Index 2.1.6 Example Code for Linear Regression After installing the corresponding Python packages, you can formally model and solve linear regression. The detailed and complete code can be found in the AllBookCode/Chapter02/01_house_price_train.py file.\n1. Import packages\nFirst, you need to import the relevant Python packages to be used. The code is as follows:\n1 import numpy as np 2 from sklearn.linear_model import LinearRegression 3 import matplotlib.pyplot as plt 2. Create samples (dataset)\nCreate a dataset for training the model, the code is as follows:\n1 def make_data(): 2 np.random.seed(20) 3 x = np.random.rand(100) * 30 + 50 # Square 4 noise = np.random.rand(100) * 50 5 y = x * 8 - 127 - noise # Pirce 6 return x,y In the above code, the purpose of line 4 is to add a certain amount of noise (error) to the dataset to simulate real-world situations.\n3. Define the model and solve it\nSolve and predict the parameters of the linear regression model using the LinearRegression class in sklearn. The code is as follows:\n1 def main(x, y): 2 model = LinearRegression() 3 x = np.reshape(x, (-1, 1)) 4 model.fit(x, y) # training 5 y_pre = model.predict(x) # prediction 6 print(y_pre) In the above code, line 2 np.reshape(x,(-1,1)) means transforming x into [n,1] shape. As for n what exactly it is, it will be deduced by np.reshape function itself. For example, if the row shape of a is [4,5], and you want to change a to [2,10] shape, you can use a.reshape([2,10]), or use a.reshape([2,-1]) to perform shape transformation. Line 4 is to solve for the parameters in the model through fit() method, that is, $w$ and $b$ in equation (2-1). Line 5 predicts the price of a house based on its area.\n4. Running Results\nFinally, call the defined function to run the program and output the parameter results obtained from the final training. The sample code is as follows:\n1 if __name__ == '__main__': 2 x, y = make_data() 3 main(x, y) 4 # w=[7.97699647],b=-154.31885006061555 5 # house price of 50 squre: [244.53097351] From the above output results, it can be found that the parameters are $w = 7.97$ and $b = -154.32$, which means that $h(x) = 7.97x - 154.32$. After that, new inputs can be predicted using $h(x)$. Meanwhile, the corresponding fitted line can also be drawn based on the solved model, as shown in Figure 2-6.\nFigure 2-6 Housing Price Forecast Trend At this point, the learning of the first stage of linear regression is completed. The above code can be found in the AllBooKCode/Chapter02/C02_house_price_train.py file.\n2.1.7 Summary In this section, we first introduced what linear regression is through a real-world scenario, then explained how to build a simple linear model, guided readers on how to transform the model solving problem into a minimization problem of the objective function, and finally built and solved a simple linear regression model using the open-source framework sklearn. Although the content is not extensive, it embodies the core idea of the entire linear regression algorithm.\n",
+  "wordCount" : "1708",
+  "inLanguage": "en",
+  "image": "https://ai-learning-guide.github.io/images/ml/202603232147.jpg","datePublished": "2026-03-23T22:07:06+08:00",
+  "dateModified": "2026-03-23T22:07:06+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "WangCheng"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI Learning Guide",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ai-learning-guide.github.io/images/favicon.png"
+    }
+  }
+}
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          throwOnError : false,
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });">
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ai-learning-guide.github.io/" accesskey="h" title="AI Learning Guide (Alt + H)">AI Learning Guide</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ai-learning-guide.github.io/posts/" title="Blogs">
+                    <span>Blogs</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ai-learning-guide.github.io/machinelearning/" title="Machine Learning">
+                    <span>Machine Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ai-learning-guide.github.io/rag/" title="RAG">
+                    <span>RAG</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ai-learning-guide.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ai-learning-guide.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <aside class="side-share-bar">
+    <div class="share-label">SHARE</div>
+    <a href="https://twitter.com/intent/tweet?text=Ch2.1%20Establishment%20and%20Solution&url=https%3a%2f%2fai-learning-guide.github.io%2fmachinelearning%2fch02%2fch02.1-model-building%2f"
+       target="_blank" rel="noopener" class="side-share-item" title="Share to X">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+      </svg>
+    </a>
+  </aside>
+
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ai-learning-guide.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://ai-learning-guide.github.io/machinelearning/">Learn Machine Learning With Me</a>&nbsp;»&nbsp;<a href="https://ai-learning-guide.github.io/machinelearning/ch02/">Chapter02 | Linear Regression</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Ch2.1 Establishment and Solution
+    </h1>
+    <div class="post-meta"><span title='2026-03-23 22:07:06 +0800 CST'>March 23, 2026</span>&nbsp;·&nbsp;<span>WangCheng</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#21-model-establishment-and-solution" aria-label="2.1 Model Establishment and Solution">2.1 Model Establishment and Solution</a><ul>
+                        
+                <li>
+                    <a href="#211-understanding-linear-regression-models" aria-label="2.1.1 Understanding Linear Regression Models">2.1.1 Understanding Linear Regression Models</a></li>
+                <li>
+                    <a href="#212-build-a-linear-regression-model" aria-label="2.1.2 Build a linear regression model">2.1.2 Build a linear regression model</a></li>
+                <li>
+                    <a href="#213-solving-the-linear-regression-model" aria-label="2.1.3 Solving the Linear Regression Model">2.1.3 Solving the Linear Regression Model</a></li>
+                <li>
+                    <a href="#214-introduction-to-sklearn" aria-label="2.1.4 Introduction to sklearn">2.1.4 Introduction to sklearn</a></li>
+                <li>
+                    <a href="#215-install-sklearn-and-other-libraries" aria-label="2.1.5 Install sklearn and Other Libraries">2.1.5 Install sklearn and Other Libraries</a></li>
+                <li>
+                    <a href="#216-example-code-for-linear-regression" aria-label="2.1.6 Example Code for Linear Regression">2.1.6 Example Code for Linear Regression</a></li>
+                <li>
+                    <a href="#217-summary" aria-label="2.1.7 Summary">2.1.7 Summary</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>After the introduction <a href="/machinelearning/ch01/">in Chapter 1</a>, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.</p>
+<p>Following the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let&rsquo;s officially start introducing linear regression.</p>
+<div style="margin: 20px 0;">
+  <img src="https://moonhotel.oss-cn-shanghai.aliyuncs.com/images/202603232147.jpg" width="600" style="display: block; margin: 0 auto;">
+  
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      Figure 2-1 Learning roadmap for linear regression
+    </div>
+  
+</div>
+<h1 id="21-model-establishment-and-solution">2.1 Model Establishment and Solution<a hidden class="anchor" aria-hidden="true" href="#21-model-establishment-and-solution">#</a></h1>
+<h2 id="211-understanding-linear-regression-models">2.1.1 Understanding Linear Regression Models<a hidden class="anchor" aria-hidden="true" href="#211-understanding-linear-regression-models">#</a></h2>
+<p>Generally speaking, each algorithm in Machine Learning is born to solve a certain type of problem. In other words, there are indeed some problems in real situations that can be solved by linear regression, such as predicting housing prices. But some may ask, why should linear regression be used for predicting housing prices instead of other algorithmic models? The reason lies in the fact that common sense tells us that housing prices increase with the growth of area and generally show a linear growth trend. So, is there a situation where the price decreases after the area reaches a certain level, thus not conforming to linear growth?This may certainly exist, but in actual processing, we will definitely prioritize the linear regression model. When the results are not satisfactory, we will try other algorithms. Therefore, after learning multiple algorithms, when faced with a specific problem, we need to consider which model is more suitable for solving the current problem.</p>
+<p>For example, the housing price trend in a certain city is shown in Figure 2-2, where the horizontal axis represents area and the vertical axis represents price, and the housing price generally shows a linear growth trend. If you are now randomly told the area of a house, how can you predict (or calculate) its corresponding price?</p>
+<div style="margin: 20px 0;">
+  <img src="https://moonhotel.oss-cn-shanghai.aliyuncs.com/images/202603232155.png" width="400" style="display: block; margin: 0 auto;">
+  
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      Figure 2-2 shows the trend of housing prices in a certain city
+    </div>
+  
+</div>
+<h2 id="212-build-a-linear-regression-model">2.1.2 Build a linear regression model<a hidden class="anchor" aria-hidden="true" href="#212-build-a-linear-regression-model">#</a></h2>
+<p>Generally speaking, when we encounter a practical problem, we first select an appropriate model based on the background of the problem and common sense. Meanwhile, common sense now tells us that the growth of housing prices is more likely to follow models such as linear regression. Therefore, we can consider building a linear regression model as shown below.</p>
+<p>$$
+\hat{y}=h(x)=wx+b\tag{2-1}
+$$</p>
+<p>Among them, $w$ is called the weight parameter (Weight), and $b$ is called the bias (Bias) or intercept (Intercept). After the unknown parameters $w$ and $b$ are solved by a certain method, it means that we have obtained this prediction model, that is, given a house area $x$, we can predict its corresponding house price $\hat{y}$.</p>
+<p>Note: In Machine Learning, the so-called model can be simply understood as a function.</p>
+<h2 id="213-solving-the-linear-regression-model">2.1.3 Solving the Linear Regression Model<a hidden class="anchor" aria-hidden="true" href="#213-solving-the-linear-regression-model">#</a></h2>
+<p>Once a model is established, the natural question that comes to mind is how to solve the model $h(x)$ using the given data, also known as the training set (Training Data). In middle school, we learned how to find the equation of a line passing through two coordinate points, but in the above scenario, this approach clearly won&rsquo;t work (since not all points lie on a single line). So, is there a good solution?</p>
+<p>At this point, we need to shift our thinking. Since we cannot directly solve for it, let&rsquo;s try an indirect approach. Now, imagine what condition $h(x)$ must satisfy to be considered a good $h(x)$? Recall the purpose of solving for $h(x)$. Isn&rsquo;t it to output an &ldquo;accurate&rdquo; housing price $\hat{y}$ after inputting the area $x$? Since directly solving for $h(x)$ is difficult, let&rsquo;s start from &ldquo;accuracy&rdquo;.</p>
+<p>But how do we define accuracy? Here, we can characterize &ldquo;accuracy&rdquo; by calculating the mean squared error between the true housing price and the predicted housing price for each sample, that is</p>
+<p>$$
+\begin{aligned}
+J(w,b)&amp;=\frac{1}{2m}\sum\limits_{i=1}^{m}{{{({{y}^{(i)}}-{{{\hat{y}}}^{(i)}})}^{2}}}\\[2ex]
+{{{\hat{y}}}^{(i)}}&amp;=h({{x}^{(i)}})=w{{x}^{(i)}}+b
+\end{aligned}
+\tag{2-2}
+$$</p>
+<p>Here, $m$ represents the number of samples; $x^{(i)}$ represents the value of the $i$-th sample, which is the area of the $i$-th house; $y^{(i)}$ represents the true price of the $i$-th house; $\hat{y}^{(i)}$ represents the predicted price of the $i$-th house.</p>
+<p>From Equation (2-2), we know that the parameters $\hat{w}$ and $\hat{b}$ when the function $J(w,b)$ takes its minimum value are the target parameters we are looking for. Why? Because when $J(w,b)$ takes its minimum value, it means that the error between the predicted values and the true values of all samples is minimized at this time. If we take it to the extreme, when all predicted values are equal to the true values, then $J(w,b)$ at this time is 0.Therefore, the problem of how to solve the model $h(x)$ is transformed into the problem of how to minimize the function $J(w,b)$, and $J(w,b)$ also has a specific term called the objective function, cost function, or loss function.</p>
+<p>By now, we are only one step away from the learning objective of the first stage, which is how to perform modeling, solving, and prediction using open-source frameworks. As for how the solving process is carried out, that is the task of the second stage. Now, let&rsquo;s start to complete the final step of the first stage.</p>
+<h2 id="214-introduction-to-sklearn">2.1.4 Introduction to sklearn<a hidden class="anchor" aria-hidden="true" href="#214-introduction-to-sklearn">#</a></h2>
+<p>As shown in Figure 2-3, scikit-learn, abbreviated as sklearn, is an open-source Machine Learning framework that includes dozens of commonly used Machine Learning algorithms, such as linear regression, Logistic Regression, decision tree, support vector machine, decision tree, and clustering analysis. Meanwhile, its Pythonic design style is very user-friendly and easy to get started for Python users, and each algorithm comes with corresponding examples and API documentation. Therefore, using sklearn for modeling is an excellent choice for beginners in Machine Learning.</p>
+<div style="margin: 20px 0;">
+  <img src="https://moonhotel.oss-cn-shanghai.aliyuncs.com/images/p2-3.png" width="600" style="display: block; margin: 0 auto;">
+  
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      Figure 2-3 sklearn Intrudction
+    </div>
+  
+</div>
+<h2 id="215-install-sklearn-and-other-libraries">2.1.5 Install sklearn and Other Libraries<a hidden class="anchor" aria-hidden="true" href="#215-install-sklearn-and-other-libraries">#</a></h2>
+<p>In Chapter 1, we have already introduced how to configure the Python environment. Now, let&rsquo;s start installing the required packages (libraries) in the Python virtual environment created in Chapter 1. If you have already completed the installation of all Python packages in this book following the steps in <a href="/machinelearning/ch01/ch01.1_installation/#114-book-environment">Section 1.1.4</a>, you can skip the content of this subsection.</p>
+<p><strong>1. Open the terminal</strong></p>
+<p>If it is in a Windows environment, you should first click the &ldquo;Start&rdquo; button, then find and open Anaconda Prompt, and finally activate the corresponding Python virtual environment. If it is in a Linux environment, you can directly open the command-line terminal and then activate the corresponding virtual environment.</p>
+<p><strong>2.</strong> <strong>Install</strong> <strong>Python packages</strong></p>
+<p>To complete the entire linear regression modeling task and visualize the results, it is necessary to install the two Python packages, sklearn and matplotlib. If the pip source address has been replaced with the Tsinghua University mirroring during the previous environment configuration, the download speed will be faster, as shown in Figure 2-4.</p>
+<div style="margin: 20px 0;">
+  <img src="https://moonhotel.oss-cn-shanghai.aliyuncs.com/images/240325190434.jpg" width="600" style="display: block; margin: 0 auto;">
+  
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      Figure 2-4 sklearn installation
+    </div>
+  
+</div>
+<p>Since PyCharm will build a new package index after installing the corresponding Python packages, it is necessary to wait a few minutes, as shown in Figure 2-5.</p>
+<div style="margin: 20px 0;">
+  <img src="https://moonhotel.oss-cn-shanghai.aliyuncs.com/images/240325190527.jpg" width="450" style="display: block; margin: 0 auto;">
+  
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      Figure 2-5 Python Package Index
+    </div>
+  
+</div>
+<h2 id="216-example-code-for-linear-regression">2.1.6 Example Code for Linear Regression<a hidden class="anchor" aria-hidden="true" href="#216-example-code-for-linear-regression">#</a></h2>
+<p>After installing the corresponding Python packages, you can formally model and solve linear regression. The detailed and complete code can be found in the <code>AllBookCode/Chapter02/01_house_price_train.py </code> file.</p>
+<p><strong>1. Import packages</strong></p>
+<p>First, you need to import the relevant Python packages to be used. The code is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> <span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LinearRegression
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span></code></pre></div><p><strong>2. Create samples (dataset)</strong></p>
+<p>Create a dataset for training the model, the code is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_data</span>():
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>     np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>seed(<span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>     x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">30</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">50</span>  <span style="color:#75715e"># Square</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>     noise <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>rand(<span style="color:#ae81ff">100</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">50</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>     y <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">8</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">127</span> <span style="color:#f92672">-</span> noise            <span style="color:#75715e"># Pirce</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>     <span style="color:#66d9ef">return</span> x,y
+</span></span></code></pre></div><p>In the above code, the purpose of line 4 is to add a certain amount of noise (error) to the dataset to simulate real-world situations.</p>
+<p><strong>3. Define the model and solve it</strong></p>
+<p>Solve and predict the parameters of the linear regression model using the <code>LinearRegression</code> class in sklearn. The code is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>(x, y):
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>     model <span style="color:#f92672">=</span> LinearRegression()         
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>     x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(x, (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>     model<span style="color:#f92672">.</span>fit(x, y) <span style="color:#75715e"># training</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>     y_pre <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(x) <span style="color:#75715e"># prediction</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">6</span>     print(y_pre)
+</span></span></code></pre></div><p>In the above code, line 2 <code>np.reshape(x,(-1,1))</code> means transforming <code>x</code> into <code>[n,1]</code> shape. As for <code>n</code> what exactly it is, it will be deduced by <code>np.reshape</code> function itself. For example, if the row shape of a is [4,5], and you want to change a to [2,10] shape, you can use <code>a.reshape([2,10])</code>, or use <code>a.reshape([2,-1])</code> to perform shape transformation. Line 4 is to solve for the parameters in the model through <code>fit()</code> method, that is, $w$ and $b$ in equation (2-1). Line 5 predicts the price of a house based on its area.</p>
+<p><strong>4. Running Results</strong></p>
+<p>Finally, call the defined function to run the program and output the parameter results obtained from the final training. The sample code is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>     x, y <span style="color:#f92672">=</span> make_data()
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span>     main(x, y)                        
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span>     <span style="color:#75715e"># w=[7.97699647],b=-154.31885006061555</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5</span>     <span style="color:#75715e"># house price of 50 squre: [244.53097351]</span>
+</span></span></code></pre></div><p>From the above output results, it can be found that the parameters are $w = 7.97$ and $b = -154.32$, which means that $h(x) = 7.97x - 154.32$. After that, new inputs can be predicted using $h(x)$. Meanwhile, the corresponding fitted line can also be drawn based on the solved model, as shown in Figure 2-6.</p>
+<div style="margin: 20px 0;">
+  <img src="https://moonhotel.oss-cn-shanghai.aliyuncs.com/images/202603232158.png" width="500" style="display: block; margin: 0 auto;">
+  
+    <div style="text-align: center; font-size: 14px; color: #666; margin-top: 5px;">
+      Figure 2-6 Housing Price Forecast Trend
+    </div>
+  
+</div>
+<p>At this point, the learning of the first stage of linear regression is completed. The above code can be found in the<code> AllBooKCode/Chapter02/C02_house_price_train.py</code> file.</p>
+<h2 id="217-summary">2.1.7 Summary<a hidden class="anchor" aria-hidden="true" href="#217-summary">#</a></h2>
+<p>In this section, we first introduced what linear regression is through a real-world scenario, then explained how to build a simple linear model, guided readers on how to transform the model solving problem into a minimization problem of the objective function, and finally built and solved a simple linear regression model using the open-source framework sklearn. Although the content is not extensive, it embodies the core idea of the entire linear regression algorithm.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ai-learning-guide.github.io/tags/linear-regression/">Linear Regression</a></li>
+      <li><a href="https://ai-learning-guide.github.io/tags/scikit-learn/">Scikit-Learn</a></li>
+    </ul>
+  </footer>
+</article>
+
+<style>
+   
+  .side-share-bar {
+    position: fixed;
+     
+    right: calc(50% - 460px);
+    top: 70%;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 999;
+  }
+
+  .share-label {
+    font-size: 10px;
+    color: #bbb;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .side-share-item {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .side-share-item:hover {
+    background: #000;  
+    color: #fff !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-color: #000;
+  }
+
+   
+  @media screen and (max-width: 1150px) {
+    .side-share-bar {
+      display: none;
+    }
+  }
+   
+#top-link {
+    position: fixed !important;
+     
+    right: calc(50% - 460px) !important;
+     
+    top: calc(75% + 100px) !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+     
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+ 
+#top-link:hover {
+    background: #000 !important;
+    color: #fff !important;
+    transform: translateY(-5px) !important;
+}
+
+ 
+@media screen and (max-width: 1150px) {
+    #top-link {
+        right: 30px !important;  
+        top: auto !important;
+        bottom: 30px !important;
+    }
+}
+</style>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://ai-learning-guide.github.io/">AI Learning Guide</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

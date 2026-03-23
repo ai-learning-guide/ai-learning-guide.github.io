@@ -6,8 +6,16 @@
     <description>Recent content on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 21:15:04 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 22:07:06 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ch2.1 Establishment and Solution</title>
+      <link>https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/</link>
+      <pubDate>Mon, 23 Mar 2026 22:07:06 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/</guid>
+      <description>&lt;p&gt;After the introduction &lt;a href=&#34;https://ai-learning-guide.github.io/machinelearning/ch01/&#34;&gt;in Chapter 1&lt;/a&gt;, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.&lt;/p&gt;
+&lt;p&gt;Following the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let&amp;rsquo;s officially start introducing linear regression.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Ch1.2 RAG Overview</title>
       <link>https://ai-learning-guide.github.io/rag/ch01/ch01.2-rag-overview/</link>
