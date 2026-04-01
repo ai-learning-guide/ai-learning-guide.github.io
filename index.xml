@@ -6,14 +6,29 @@
     <description>Recent content on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 22:07:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 21:05:11 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What are soft tags? How do they differ from hard tags?</title>
+      <link>https://ai-learning-guide.github.io/posts/what-are-soft-tags-how-do-they-differ-from-hard-tags/</link>
+      <pubDate>Wed, 01 Apr 2026 21:05:11 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/posts/what-are-soft-tags-how-do-they-differ-from-hard-tags/</guid>
+      <description>&lt;p&gt;In Model Training (especially model distillation) and Deep learning, Hard Targets/Labels  and  Soft Targets/Labels are two different ways to describe sample category information. Their core difference lies in the dimension of the information they contain and their impact on model training.&lt;/p&gt;
+&lt;h1 id=&#34;1-what-is-a-hard-label&#34;&gt;1. What is a hard label?&lt;/h1&gt;
+&lt;p&gt;Hard labels are labels in the form of One-hot Encoding provided by the original dataset.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Manifestation: It only indicates the single correct category to which the sample belongs. For example, in a three-class classification task, if the sample belongs to the third class, its hard label is [0,0,1].&lt;/li&gt;
+&lt;li&gt;Information Content : The information is very singular. It can only tell the model &amp;ldquo;which category this sample belongs to&amp;rdquo; without providing any additional information about the correlation between categories.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-what-is-a-soft-label&#34;&gt;2. What is a soft label?&lt;/h1&gt;
+&lt;p&gt;Soft labels typically refer to the probability distribution output by a trained &amp;ldquo;teacher model&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Ch2.1 Establishment and Solution</title>
       <link>https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/</link>
       <pubDate>Mon, 23 Mar 2026 22:07:06 +0800</pubDate>
       <guid>https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/</guid>
-      <description>&lt;p&gt;After the introduction &lt;a href=&#34;https://ai-learning-guide.github.io/machinelearning/ch01/&#34;&gt;in Chapter 1&lt;/a&gt;, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: linear regression.&lt;/p&gt;
+      <description>&lt;p&gt;After the introduction &lt;a href=&#34;https://ai-learning-guide.github.io/machinelearning/ch01/&#34;&gt;in Chapter 1&lt;/a&gt;, we have completed the installation and configuration of the Python Development Environment. Now, we will officially start introducing the first algorithm: Linear Regression.&lt;/p&gt;
 &lt;p&gt;Following the learning method introduced in the preface, the learning roadmap for the entire linear regression is shown in Figure 2-1. Since this is the first algorithm introduced, we will introduce a lot of basic content, making it seem like there is a large amount of content. Therefore, the learning of the entire linear regression will be introduced through the content of 7 subsections. However, it is gratifying that as long as the learning of the first 4 steps is completed, the requirements of Stage 1 are basically met. Now, let&amp;rsquo;s officially start introducing linear regression.&lt;/p&gt;</description>
     </item>
     <item>

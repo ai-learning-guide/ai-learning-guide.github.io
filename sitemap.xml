@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ai-learning-guide.github.io/</loc>
-    <lastmod>2026-03-23T22:07:06+08:00</lastmod>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/tags/distillation/</loc>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/tags/entropy/</loc>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/posts/</loc>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/tags/soft-label/</loc>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/tags/</loc>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
+  </url><url>
+    <loc>https://ai-learning-guide.github.io/posts/what-are-soft-tags-how-do-they-differ-from-hard-tags/</loc>
+    <lastmod>2026-04-01T21:05:11+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/machinelearning/ch02/ch02.1-model-building/</loc>
     <lastmod>2026-03-23T22:07:06+08:00</lastmod>
@@ -12,9 +30,6 @@
     <lastmod>2026-03-23T22:07:06+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/tags/scikit-learn/</loc>
-    <lastmod>2026-03-23T22:07:06+08:00</lastmod>
-  </url><url>
-    <loc>https://ai-learning-guide.github.io/tags/</loc>
     <lastmod>2026-03-23T22:07:06+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/rag/ch01/ch01.2-rag-overview/</loc>
@@ -30,9 +45,6 @@
     <lastmod>2026-03-23T20:20:03+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/tags/methodology/</loc>
-    <lastmod>2026-03-23T20:20:03+08:00</lastmod>
-  </url><url>
-    <loc>https://ai-learning-guide.github.io/posts/</loc>
     <lastmod>2026-03-23T20:20:03+08:00</lastmod>
   </url><url>
     <loc>https://ai-learning-guide.github.io/rag/ch01/ch01.1_whats-rag/</loc>

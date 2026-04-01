@@ -6,8 +6,29 @@
     <description>Recent content in Tags on AI Learning Guide</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2026 22:07:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 21:05:11 +0800</lastBuildDate>
     <atom:link href="https://ai-learning-guide.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distillation</title>
+      <link>https://ai-learning-guide.github.io/tags/distillation/</link>
+      <pubDate>Wed, 01 Apr 2026 21:05:11 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/tags/distillation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Entropy</title>
+      <link>https://ai-learning-guide.github.io/tags/entropy/</link>
+      <pubDate>Wed, 01 Apr 2026 21:05:11 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/tags/entropy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soft Label</title>
+      <link>https://ai-learning-guide.github.io/tags/soft-label/</link>
+      <pubDate>Wed, 01 Apr 2026 21:05:11 +0800</pubDate>
+      <guid>https://ai-learning-guide.github.io/tags/soft-label/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Linear Regression</title>
       <link>https://ai-learning-guide.github.io/tags/linear-regression/</link>
